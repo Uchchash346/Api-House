@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import SearchPost from './SearchPost';
 import './styles/PostCard.css';
 
 const PostCard = () => {
@@ -21,7 +20,15 @@ const PostCard = () => {
 
     return (
         <div className='post-card-area'>
-                <SearchPost />
+            <div class="search">
+                <form class="search-form">
+                    <input
+                        type="text"
+                        placeholder="Search any post.."
+                    />
+                    <input type="submit" value="Search" />
+                </form>
+            </div>
             <div className="container">
                 {
                     posts && posts.slice(0, postLoading).map((post) => {
